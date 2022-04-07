@@ -84,7 +84,8 @@ header {
   background-image: url(./images/logo-bookmark-white.svg);
 }
 .lock-scroll header {
-  background-color: hsl(226deg 45% 17% / 80%);
+  /* background-color: hsl(226deg 45% 17% / 80%); */
+  background-color: hsl(226deg 45% 17% / 93%);
 }
 .lock-scroll .close-nav-img {
   display: block;
@@ -115,7 +116,8 @@ header {
   bottom: 0;
   height: 100%;
   width: 100%;
-  background-color: hsl(226deg 45% 17% / 80%);
+  /* background-color: hsl(226deg 45% 17% / 80%); */
+  background-color: hsl(226deg 45% 17% / 93%);
   color: white;
   z-index: 50;
   height: 100vh;
@@ -170,24 +172,27 @@ Hero
   margin-top: 2rem;
   position: relative;
   margin-bottom: 4.5rem;
+  width: 100%;
 }
 .hero-img-container::after {
   content: "";
   position: absolute;
-  width: 80%;
-  right: -3rem;
+  width: 88%;
+  /* right: -3rem; */
+  right: -20%;
   background-color: hsl(231, 69%, 60%);
   z-index: 1;
-  top: 23%;
-  height: 85%;
-  border-radius: 50% 0 0 50%;
+  top: 24%;
+  height: 84%;
+  /* border-radius: 50% 0 0 50%; */
+  border-radius: 170px 0 0 170px;
 }
 .hero-img-container img,
 .feature-tab-image-container img {
   position: relative;
   z-index: 5;
-  max-width: 80%;
   max-width: 90%;
+  max-height: 19rem;
   margin: 0 auto;
   display: block;
 }
@@ -249,7 +254,7 @@ article,
 }
 /* global more info button */
 .questions-container > button,
-.features-tab-container button {
+article button {
   box-shadow: 0 5px 10px -5px #5368df;
   padding: 1rem;
   border-radius: 5px;
@@ -270,15 +275,21 @@ Features section
   content: "";
   position: absolute;
   width: 80%;
-  left: -3rem;
+  /* left: -3rem; */
   background-color: hsl(231, 69%, 60%);
   z-index: 1;
   top: 27%;
-  height: 85%;
-  border-radius: 0 50% 50% 0;
+  /* height: 85%; */
+  /* border-radius: 0 50% 50% 0; */
+  border-radius: 0 170px 170px 0;
+  height: 90%;
+  left: -17%;
 }
 .features-tab-text {
   gap: 2rem;
+}
+.features-tab-container {
+  width: 100%;
 }
 .features-tab-header {
   margin-bottom: 4rem;
@@ -301,6 +312,9 @@ Features section
   border-bottom: 1px solid hsl(240, 1%, 83%);
 }
 /* active tab name */
+.features-tab-header ul li button {
+  border-bottom: 3.5px solid transparent;
+}
 .features-tab-header ul li button.active-tab {
   color: hsl(229, 31%, 21%);
   border-bottom: 3.5px solid rgb(255, 78, 13);
@@ -312,6 +326,16 @@ Features section
 .feature-tab-image-container {
   position: relative;
   margin-bottom: 5rem;
+  width: 100%;
+}
+/* active tab article */
+.features-tab-text article {
+  display: none;
+  width: 100%;
+  gap: 2rem;
+}
+.features-tab-text article.active-tab {
+  display: flex;
 }
 
 /*
@@ -388,7 +412,7 @@ FAQ
 ============
 Form
 ============
- */
+*/
 form {
   display: flex;
   flex-direction: column;
