@@ -42,6 +42,7 @@ button {
 }
 a {
   color: inherit;
+  display: inline-block;
   text-decoration: none;
 }
 ul {
@@ -431,6 +432,18 @@ FAQ
 .question.active .question-answer {
   display: block;
 }
+/* question arrow */
+.arrow {
+  transition: transform 150ms ease;
+  display: flex;
+  align-items: center;
+}
+.question.active .arrow {
+  transform: rotate(-180deg);
+}
+.question.active .arrow img {
+  filter: hue-rotate(119deg) brightness(1.5);
+}
 
 /*
 ============
@@ -509,6 +522,7 @@ Footer
 }
 .social-links-container ul {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 /* attribution */
@@ -518,4 +532,48 @@ Footer
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*
+===========
+Hover
+===========
+*/
+/* nav hover */
+.nav-menu-list a:hover {
+  background-color: rgba(247, 247, 247, 0.212);
+}
+.nav-menu-list .login-btn:hover {
+  background-color: hsl(0deg 59% 53%);
+}
+/* blue btn hover */
+.questions-container > button:hover,
+article button:hover,
+.hero-buttons-container button:first-child:hover,
+.browser-card button:hover {
+  background-color: hsl(231, 69%, 68%);
+}
+/* white hero btn hover */
+.hero-buttons-container button:last-child:hover {
+  background-color: hsl(0, 0%, 99%);
+}
+/* features tab menu hover */
+.features-tab-header button:hover {
+  color: hsl(19, 100%, 51%);
+}
+/* form submit hover */
+form button:hover {
+  background-color: hsl(0, 94%, 70%);
+}
+/* faq hover */
+.question-title:hover h4 {
+  color: hsl(19, 100%, 51%);
+}
+/* footer hover */
+.footer-top a:hover {
+  color: hsl(4, 87%, 64%);
+}
+.nav-menu-social-links-container a:hover path,
+.footer-top a:hover path {
+  fill: hsl(4, 87%, 64%);
 }
