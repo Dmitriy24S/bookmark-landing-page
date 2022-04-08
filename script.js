@@ -33,3 +33,15 @@ tabMenuButtons.forEach((button) => {
     selectedTab.classList.add("active-tab");
   });
 });
+
+// FAQ
+const questions = document.querySelectorAll(".question");
+
+questions.forEach((question) => {
+  // grab each question title
+  const questionTitle = question.querySelector(".question-title");
+  // on question title click add active style to show question answer
+  questionTitle.addEventListener("click", () => {
+    question.classList.toggle("active");
+  });
+});

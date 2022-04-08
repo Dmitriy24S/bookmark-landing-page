@@ -192,7 +192,8 @@ Hero
   position: relative;
   z-index: 5;
   max-width: 90%;
-  max-height: 19rem;
+  /* max-height: 19rem; */
+  max-height: 22rem;
   margin: 0 auto;
   display: block;
 }
@@ -271,19 +272,38 @@ Features section
 .features {
   gap: 2rem;
 }
+.feature-tab-image-container {
+  position: relative;
+  margin-bottom: 5rem;
+  width: 100%;
+}
 .feature-tab-image-container::after {
-  content: "";
-  position: absolute;
-  width: 80%;
+  /* content: "";
+  position: absolute; */
+  /* width: 80%; */
   /* left: -3rem; */
-  background-color: hsl(231, 69%, 60%);
-  z-index: 1;
-  top: 27%;
   /* height: 85%; */
   /* border-radius: 0 50% 50% 0; */
+  /* background-color: hsl(231, 69%, 60%);
+  z-index: 1;
+  top: 27%;
   border-radius: 0 170px 170px 0;
   height: 90%;
+  left: -17%; */
+}
+.features-tab-text {
+  position: relative;
+}
+.features-tab-text::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(231, 69%, 60%);
+  z-index: 1;
+  border-radius: 0 170px 170px 0;
+  height: 38%;
   left: -17%;
+  width: 89%;
+  bottom: 37vh;
 }
 .features-tab-text {
   gap: 2rem;
@@ -323,11 +343,7 @@ Features section
   padding: 1rem;
   margin: 0 auto;
 }
-.feature-tab-image-container {
-  position: relative;
-  margin-bottom: 5rem;
-  width: 100%;
-}
+
 /* active tab article */
 .features-tab-text article {
   display: none;
@@ -403,9 +419,17 @@ FAQ
 .question-title {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+}
+.question-answer {
+  display: none;
 }
 .question-answer p {
   text-align: left;
+  max-width: none;
+}
+.question.active .question-answer {
+  display: block;
 }
 
 /*
