@@ -412,18 +412,21 @@ FAQ
   border-bottom: 1px solid rgb(214, 214, 214);
   text-align: left;
   width: 100%;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
+  padding-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
 }
 .question-title {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  padding-bottom: 1rem;
 }
 .question-answer {
   display: none;
+  padding-bottom: 1rem;
 }
 .question-answer p {
   text-align: left;
@@ -544,7 +547,7 @@ Hover
   background-color: rgba(247, 247, 247, 0.212);
 }
 .nav-menu-list .login-btn:hover {
-  background-color: hsl(0deg 59% 53%);
+  background-color: hsl(0deg 74% 59%);
 }
 /* blue btn hover */
 .questions-container > button:hover,
