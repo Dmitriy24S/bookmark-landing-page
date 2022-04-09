@@ -51,6 +51,9 @@ ul {
 image {
   display: block;
 }
+img {
+  display: block;
+}
 
 /*
 ============
@@ -58,8 +61,6 @@ Header
 ============
 */
 header {
-  display: flex;
-  justify-content: space-between;
   padding: 1rem;
   position: -webkit-sticky;
   position: sticky;
@@ -68,11 +69,19 @@ header {
   box-shadow: 0 1px 10px 0px rgb(128 124 175 / 20%);
   z-index: 50;
 }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 60rem;
+  margin: 0 auto;
+}
 .header-logo {
   background-image: url(./images/logo-bookmark.svg);
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
+  height: 32px;
 }
 /* lock scroll on open navigation menu */
 .lock-scroll {
@@ -85,7 +94,6 @@ header {
   background-image: url(./images/logo-bookmark-white.svg);
 }
 .lock-scroll header {
-  /* background-color: hsl(226deg 45% 17% / 80%); */
   background-color: hsl(226deg 45% 17% / 93%);
 }
 .lock-scroll .close-nav-img {
@@ -101,6 +109,9 @@ header {
   display: none;
 }
 /* navigation menu */
+.nav-menu {
+  display: flex;
+}
 .nav-menu-list-container {
   display: none;
   padding: 2rem;
@@ -117,18 +128,11 @@ header {
   bottom: 0;
   height: 100%;
   width: 100%;
-  /* background-color: hsl(226deg 45% 17% / 80%); */
   background-color: hsl(226deg 45% 17% / 93%);
   color: white;
   z-index: 50;
   height: 100vh;
 }
-/* .nav-menu-list-container ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 .nav-menu-list li {
   border-top: 1px solid #9194a1;
   width: 100%;
@@ -179,24 +183,23 @@ Hero
   content: "";
   position: absolute;
   width: 88%;
-  /* right: -3rem; */
-  right: -20%;
+  left: 41%;
   background-color: hsl(231, 69%, 60%);
   z-index: 1;
   top: 24%;
   height: 84%;
-  /* border-radius: 50% 0 0 50%; */
   border-radius: 170px 0 0 170px;
 }
 .hero-img-container img,
 .feature-tab-image-container img {
+  display: block;
   position: relative;
   z-index: 5;
-  max-width: 90%;
-  /* max-height: 19rem; */
+  width: 100%;
+  /* max-width: 90%; */
+  max-width: 24rem;
   max-height: 22rem;
   margin: 0 auto;
-  display: block;
 }
 .hero-buttons-container {
   display: flex;
@@ -206,7 +209,6 @@ Hero
 }
 .hero-buttons-container button {
   box-shadow: 0 3px 10px 0 rgba(128, 124, 175, 0.2);
-  padding: 1rem 1.5rem;
   padding: 1rem;
   border-radius: 5px;
   font-weight: 600;
@@ -246,7 +248,6 @@ article,
   justify-content: center;
   gap: 1rem;
   text-align: center;
-  /* max-width: 19rem; */
   margin: 0 auto;
 }
 .features,
@@ -266,9 +267,9 @@ article button {
 }
 
 /*
-==========
+================
 Features section
-==========
+==================
 */
 .features {
   gap: 2rem;
@@ -278,33 +279,19 @@ Features section
   margin-bottom: 5rem;
   width: 100%;
 }
-.feature-tab-image-container::after {
-  /* content: "";
-  position: absolute; */
-  /* width: 80%; */
-  /* left: -3rem; */
-  /* height: 85%; */
-  /* border-radius: 0 50% 50% 0; */
-  /* background-color: hsl(231, 69%, 60%);
-  z-index: 1;
-  top: 27%;
-  border-radius: 0 170px 170px 0;
-  height: 90%;
-  left: -17%; */
-}
 .features-tab-text {
   position: relative;
 }
 .features-tab-text::after {
   content: "";
   position: absolute;
-  background-color: hsl(231, 69%, 60%);
   z-index: 1;
+  background-color: hsl(231, 69%, 60%);
   border-radius: 0 170px 170px 0;
   height: 38%;
-  left: -17%;
   width: 89%;
-  bottom: 37vh;
+  right: 42%;
+  bottom: 45%;
 }
 .features-tab-text {
   gap: 2rem;
@@ -337,14 +324,13 @@ Features section
   border-bottom: 3.5px solid transparent;
 }
 .features-tab-header ul li button.active-tab {
+  display: block;
   color: hsl(229, 31%, 21%);
   border-bottom: 3.5px solid rgb(255, 78, 13);
   height: 100%;
-  display: block;
   padding: 1rem;
   margin: 0 auto;
 }
-
 /* active tab article */
 .features-tab-text article {
   display: none;
@@ -364,6 +350,7 @@ Download section
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  /* transition: all 250ms ease; */
 }
 .browser-card {
   box-shadow: 3px 8px 10px 0 rgb(172 166 235 / 20%);
@@ -412,11 +399,9 @@ FAQ
   border-bottom: 1px solid rgb(214, 214, 214);
   text-align: left;
   width: 100%;
-  /* padding-bottom: 2rem; */
   padding-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  /* gap: 1.5rem; */
 }
 .question-title {
   display: flex;
@@ -479,7 +464,8 @@ form {
   letter-spacing: 1px;
 }
 input {
-  padding: 1rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
   border-radius: 5px;
   border: 2px solid transparent;
 }
@@ -494,12 +480,15 @@ form button {
   margin-top: 1.3rem;
 }
 .form-error-text {
-  /* display: none; */
+  display: none;
   background-color: hsl(0, 94%, 66%);
   color: white;
   text-align: left;
   padding: 0.5rem 1rem;
   border-radius: 0 0 7px 7px;
+}
+.error-input .form-error-text {
+  display: block;
 }
 
 /*
@@ -542,41 +531,247 @@ Footer
 Hover
 ===========
 */
-/* nav hover */
-.nav-menu-list a:hover {
-  background-color: rgba(247, 247, 247, 0.212);
+@media (hover) {
+  /* nav hover */
+  .nav-menu-list a:hover {
+    background-color: rgba(247, 247, 247, 0.212);
+  }
+  .nav-menu-list .login-btn:hover {
+    background-color: hsl(0deg 74% 59%);
+  }
+  /* blue btn hover */
+  .questions-container > button:hover,
+  article button:hover,
+  .hero-buttons-container button:first-child:hover,
+  .browser-card button:hover {
+    background-color: hsl(231, 69%, 68%);
+  }
+  /* white hero btn hover */
+  .hero-buttons-container button:last-child:hover {
+    background-color: hsl(0, 0%, 99%);
+  }
+  /* features tab menu hover */
+  .features-tab-header button:hover {
+    color: hsl(19, 100%, 51%);
+  }
+  /* form submit hover */
+  form button:hover {
+    background-color: hsl(0, 94%, 70%);
+  }
+  /* faq hover */
+  .question-title:hover h4 {
+    color: hsl(19, 100%, 51%);
+  }
+  /* footer hover */
+  .footer-top a:hover {
+    color: hsl(4, 87%, 64%);
+  }
+  .nav-menu-social-links-container a:hover path,
+  .footer-top a:hover path {
+    fill: hsl(4, 87%, 64%);
+  }
+  /* desktop size nav hover */
+  @media (min-width: 768px) {
+    .nav-menu-list li a:hover {
+      color: hsl(4, 87%, 64%);
+    }
+    .nav-menu-list .login-btn:hover {
+      background-color: hsl(0deg 74% 59%);
+      color: white;
+    }
+  }
 }
-.nav-menu-list .login-btn:hover {
-  background-color: hsl(0deg 74% 59%);
-}
-/* blue btn hover */
-.questions-container > button:hover,
-article button:hover,
-.hero-buttons-container button:first-child:hover,
-.browser-card button:hover {
-  background-color: hsl(231, 69%, 68%);
-}
-/* white hero btn hover */
-.hero-buttons-container button:last-child:hover {
-  background-color: hsl(0, 0%, 99%);
-}
-/* features tab menu hover */
-.features-tab-header button:hover {
-  color: hsl(19, 100%, 51%);
-}
-/* form submit hover */
-form button:hover {
-  background-color: hsl(0, 94%, 70%);
-}
-/* faq hover */
-.question-title:hover h4 {
-  color: hsl(19, 100%, 51%);
-}
-/* footer hover */
-.footer-top a:hover {
-  color: hsl(4, 87%, 64%);
-}
-.nav-menu-social-links-container a:hover path,
-.footer-top a:hover path {
-  fill: hsl(4, 87%, 64%);
+
+/* Tablet / Desktop style */
+@media (min-width: 768px) {
+  p {
+    max-width: 27rem;
+  }
+
+  /* header */
+  .header-logo {
+    height: 32px;
+  }
+  header {
+    padding-bottom: 0.6rem;
+  }
+  .navigation-menu-toggle {
+    display: none;
+  }
+  .nav-menu-list-container {
+    display: flex;
+    padding: 0;
+  }
+  .nav-menu-list-container ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .nav-menu-list li {
+    border-top: none;
+  }
+  .nav-menu-list li a {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+  .nav-menu-list li:last-child a {
+    border: 2px solid hsl(4, 87%, 64%);
+    margin-top: 0;
+    border-radius: 5px;
+    padding: 0.4rem 1.4rem;
+  }
+  .nav-menu-social-links-container {
+    display: none;
+  }
+
+  /* body */
+  .hero {
+    flex-direction: row-reverse;
+    gap: 1rem;
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .hero-text-container {
+    text-align: left;
+    align-items: start;
+    margin: 0;
+    margin-left: auto;
+    margin-bottom: 2rem;
+  }
+  .hero-img-container {
+    width: 50%;
+  }
+  .hero-img-container::after {
+    left: 22%;
+    right: auto;
+    width: 60vw;
+  }
+
+  /* features desktop */
+  .features {
+    max-width: 60rem;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+  }
+  .features-tab-header {
+    max-width: 45rem;
+    position: relative;
+  }
+  .features-tab-header ul {
+    flex-direction: row;
+  }
+  article {
+    flex-direction: row;
+  }
+  .feature-tab-image-container {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  .feature-tab-text-container {
+    align-items: start;
+    text-align: start;
+    width: 24rem;
+  }
+  .features-tab-text::after {
+    content: "";
+    position: absolute;
+    background-color: hsl(231, 69%, 60%);
+    z-index: 1;
+    border-radius: 0 170px 170px 0;
+    width: 60vw;
+    height: 268px;
+    left: auto;
+    right: 65%;
+    bottom: auto;
+    top: 30%;
+  }
+  article.bookmark-tab {
+    margin: 0 auto;
+  }
+  .feature-tab-image-container img {
+    margin: 0;
+    margin-left: auto;
+    max-height: 19rem;
+  }
+  .hero-img-container img,
+  .feature-tab-image-container img {
+    max-width: 90%;
+  }
+  .hero-img-container img {
+    max-width: 31rem;
+  }
+
+  /* download section desktop */
+  .download-browser-cards-container {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 2.5rem;
+    gap: 1rem;
+  }
+  .browser-card:nth-child(2) {
+    margin-top: 3rem;
+  }
+  .browser-card:nth-child(3) {
+    margin-top: 6rem;
+  }
+  .browser-card {
+    min-width: 11rem;
+    padding: 1rem 0.4rem;
+  }
+  /* XL+ spacing */
+  @media (min-width: 950px) {
+    .download-browser-cards-container {
+      gap: 3rem;
+    }
+    .browser-card {
+      min-width: 17rem;
+      padding: 1rem;
+    }
+  }
+
+  /* questions section desktop */
+  .faq-top-text p {
+    max-width: 28rem;
+  }
+  .questions-container {
+    max-width: 30rem;
+  }
+
+  /* form desktop */
+  .input-wrapper {
+    width: 25rem;
+  }
+  .input-wrapper input {
+    width: 100%;
+  }
+  form {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+  form button {
+    margin-top: 0;
+    width: 15rem;
+  }
+
+  /* footer desktop */
+  footer {
+    background-color: hsl(229, 31%, 21%);
+  }
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 60rem;
+  }
+  .footer-menu-container ul {
+    flex-direction: row;
+  }
+  .footer-menu-container {
+    margin-right: auto;
+  }
 }
