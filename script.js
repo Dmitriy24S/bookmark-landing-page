@@ -45,3 +45,21 @@ questions.forEach((question) => {
     question.classList.toggle("active");
   });
 });
+
+// Form input check
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputValue = e.target[0].value;
+  validateEmail(inputValue);
+});
+
+function validateEmail(inputValue) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputValue)) {
+    // if input passes test: remove error style
+    return form.classList.remove("error-input");
+  }
+  // if input does not pass test: add error style
+  form.classList.add("error-input");
+}
