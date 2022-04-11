@@ -63,3 +63,22 @@ function validateEmail(inputValue) {
   // if input does not pass test: add error style
   form.classList.add("error-input");
 }
+
+// slide in bg shape
+const featuresSection = document.querySelector(".features-tab-container");
+
+const contentFadeOptions = {
+  rootMargin: "700px 0px -600px 0px",
+};
+
+const contentObserver = new IntersectionObserver(function (entries, contentObserver) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("appear");
+    }
+  });
+}, contentFadeOptions);
+
+contentObserver.observe(featuresSection);
